@@ -2,6 +2,7 @@
 import {ReferralServiceService} from '../../services/referral-service.service';
 import {ReferralForm} from '../../interfaces/ReferralForm';
 import {FormGroup} from '@angular/forms';
+import {MockData} from '../../mocks/MockData';
 
 
 @Component({
@@ -27,16 +28,20 @@ export class ReferralFormComponent implements OnInit {
     }
   };
 
+  submitted = false;
 
 
   constructor(public referralFormService: ReferralServiceService) {
   }
 
   ngOnInit(): void {
-    this.referralFormService.getFormData().subscribe(x => {
-      this.formData = x;
-    });
+    // this.referralFormService.getFormData().subscribe(x => {
+    //   this.formData = x;
+    // });
+    this.formData = MockData.CreateFormData();
   }
+
+  get diagnostic() { return JSON.stringify(this.formData); }
 
   validateForm() {
     this.referralFormService.log('validate and submit');
