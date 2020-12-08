@@ -1,7 +1,7 @@
 ﻿import {Component, Inject, Input, OnInit} from '@angular/core';
-import {ReferralServiceService} from "../../services/referral-service.service";
-import {ReferralForm} from "../../interfaces/ReferralForm";
-import {FormGroup} from "@angular/forms";
+import {ReferralServiceService} from '../../services/referral-service.service';
+import {ReferralForm} from '../../interfaces/ReferralForm';
+import {FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -14,16 +14,16 @@ export class ReferralFormComponent implements OnInit {
   formData: ReferralForm = {
     referralPatient: {
       addressLine: [],
-      city: "",
-      country: "",
+      city: '',
+      country: '',
       dateOfBirth: undefined,
       emails: [],
-      firstName: "",
-      lastName: "",
-      middleName: "",
+      firstName: '',
+      lastName: '',
+      middleName: '',
       phoneNumbers: [],
-      state: "",
-      zip: ""
+      state: '',
+      zip: ''
     }
   };
 
@@ -34,12 +34,12 @@ export class ReferralFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.referralFormService.getFormData().subscribe(x => {
-      this.formData = x
+      this.formData = x;
     });
   }
 
   validateForm() {
-    this.referralFormService.log("validate and submit");
+    this.referralFormService.log('validate and submit');
   }
 }
 
