@@ -10,15 +10,15 @@
     zip: string;
     country: string
     phoneNumbers: PhoneNumber[]
-    emails: email[]
-  }
+    emails: Email[]
+  };
 }
 
 export interface PhoneNumber {
   value: string;
-  phoneNumberType: number
+  phoneNumberType: number;
 }
 
-export interface email {
-  value: string
+export interface Email {
+  value: string;
 }
